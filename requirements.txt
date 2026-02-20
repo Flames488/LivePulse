@@ -14,4 +14,4 @@ sentry-sdk
 python-jose 
 redis
 asyncpg
-
+supabase-py
