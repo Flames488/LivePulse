@@ -1,0 +1,17 @@
+
+fastapi
+uvicorn
+requests
+slowapi
+tenacity
+pytest
+python-dotenv
+celery
+requests
+asyncpg
+python-jose
+sentry-sdk
+python-jose 
+redis
+asyncpg
+

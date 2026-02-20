@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS job_locks (
+  name TEXT PRIMARY KEY,
+  locked_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
