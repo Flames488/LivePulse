@@ -13,6 +13,10 @@ from pydantic import BaseModel, Field
 from slowapi.middleware import SlowAPIMiddleware
 from typing import Any
 
+from config_validator import validate_env
+
+validate_env()
+
 from api import websocket as ws_routes
 from api.matches import router as api_match_router
 from api.predictions import router as api_prediction_router
@@ -199,6 +203,10 @@ def create_app() -> FastAPI:
     def root() -> dict[str, str]:
         """Returns a quick confirmation that the API process is alive."""
         return {"status": "LivePulse API running"}
+
+    @application.get("/health", tags=["System"], summary="Health check")
+    def health() -> dict[str, str]:
+        return {"status": "ok"}
 
     @application.post(
         "/validate_prediction",
